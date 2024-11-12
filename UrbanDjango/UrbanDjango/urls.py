@@ -18,10 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from task2.views import func_function #ClassView - для стандартного варианта
 from django.views.generic import TemplateView  # - для сокращенного варианта
+from task3.views import games, cart   # импорт функции для магазина, корзины
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', func_function),         # запуск функционального представления
     # path('class/', ClassView.as_view())    # запуск классового представления (стандартный вариант)
-    path('class/', TemplateView.as_view(template_name='second_task/class_template.html'))  # упрощенный вариант
+    path('class/', TemplateView.as_view(template_name='second_task/class_template.html')),  # упрощенный вариант
+    path('platform/', TemplateView.as_view(template_name='third_task/platform.html')),
+    path('platform/games', games),  # запуск функции для магазина
+    path('platform/cart', cart),  # запуск функции для корзины
 ]
