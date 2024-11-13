@@ -1,0 +1,24 @@
+{% extends "fourth_task/menu.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block pagename %}
+        <h1>Игры</h1>
+    {% endblock %}
+
+    {% block menu %}
+        {{ block.super }}
+    {% endblock %}
+
+    {% block content  %}
+        {% for i in games_list %}
+            <p>{{ i }}<button>{{ text }}</button></p>
+        {% endfor %}
+    {% endblock %}
+
+</body>
+</html>
